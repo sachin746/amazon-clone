@@ -11,7 +11,7 @@ var passport=require('passport');
 var flash=require('connect-flash');
 
 require('./config/passport')(passport)
-mongoose.connect('mongo "mongodb+srv://cluster0.nmt1k.mongodb.net/amazon-clone" --username 15august', {
+mongoose.connect('mongodb+srv://sachin746:15august@cluster0.nmt1k.mongodb.net/<dbname>?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 }).then(console.log(`mongodb connected`)).catch(err=>console.log(err));
