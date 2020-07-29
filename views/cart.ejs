@@ -20,11 +20,11 @@
             </div>
             <div class="header-links"><a href="/cart">Cart <span style="border: 1px solid red;border-radius: 20px;background-color: orangered;"><%=cart.totalquantity%></span></a>
                 <a href="/users/signin">
-                    <%if(user!='undefined'){%>
-                         <%=user.name%>
-                    <%}else{%>
-                        SignIn
-                   <% }%>
+                    <%if(typeof user!='undefined'){%>
+                        <%=user.name%>
+                        <%}else{%>
+                            SignIn
+                       <% }%>
                 </a></div>
         </header>
         <aside class="sidebar">
