@@ -89,7 +89,6 @@ router.get('/cart',async(req,res)=>{
   }
   displaycart.total=total;
   displaycart.totalquantity=totalquantity;
-  console.log(displaycart)
   req.session.totalquantity=totalquantity;
   res.render('cart',{cart:displaycart,user:req.user})
   })
