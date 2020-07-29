@@ -2,8 +2,10 @@ var express = require('express');
 var router = express.Router();
 const Prdt = require('../models/Item.js')
 var session =require('express-session');
+var isAdmin=require('../config/admin');
 var flash=require('connect-flash');
 var bodyparser = require('body-parser');
+
 const multer = require("multer");
 var path = require('path');
 
@@ -38,7 +40,7 @@ router.get("/product/:id",async(req,res)=>{
     res.render("productdetail",{prdt:prdt,totalquantity:req.session.totalquantity||0,user:req.user})
   })
   
-router.post("/additem", product_image.single('pimage'), async (req, res) => {
+router.post("/additem",isAdmin, product_image.single('pimage'), async (req, res) => {
     var product = {
       pname: req.body.pname,
       pbrand: req.body.pbrand,
@@ -50,7 +52,7 @@ router.post("/additem", product_image.single('pimage'), async (req, res) => {
     res.redirect("/");
   })
   
-router.get("/additem", function (req, res) {
+router.get("/additem",isAdmin, function (req, res) {
     res.render('additem',{user:req.user});
   })
 

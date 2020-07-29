@@ -17,7 +17,13 @@
                 <a href="/">Amazona</a>
                 <a href="/additem">Add</a>
             </div>
-            <div class="header-links"><a href="/cart">Cart</a><a href="/users/signin">SignIn</a></div>
+            <div class="header-links"><a href="/cart">Cart</a><a href="/users/signin">
+                <%if(typeof user!='undefined'){%>
+                    <%=user.name%>
+                    <%}else{%>
+                        SignIn
+                   <% }%>
+            </a></div>
         </header>
         <aside class="sidebar">
             <h3>Shopping categories</h3>
